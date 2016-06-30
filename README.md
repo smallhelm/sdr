@@ -1,0 +1,2 @@
+# sdr
+Sparse Distributed Representation
