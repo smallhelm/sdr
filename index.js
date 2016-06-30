@@ -16,14 +16,27 @@ sdr.capacity = function(n, w){
 };
 
 sdr.intersect = function(a, b){
-  //TODO optimize using the assumption SDRs are sorted
   var u = [];
-  var i, j;
-  for(i = 0; i < a.length; i++){
-    for(j = 0; j < b.length; j++){
+  var curv = -1;
+  var i = 0;
+  var j = 0;
+  while(true){
+    while(a[i] <= curv && (i < a.length)){
+      i++;
+    }
+    while(b[j] <= curv && (j < b.length)){
+      j++;
+    }
+    if(!(i < a.length) || !(j < b.length)){
+      break;
+    }
+    if(a[i] <= b[j]){
       if(a[i] === b[j]){
         u.push(a[i]);
       }
+      curv = a[i];
+    }else{
+      curv = b[j];
     }
   }
   return u;
