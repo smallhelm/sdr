@@ -1,6 +1,6 @@
 {
   "name": "sdr",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "functions to work with Sparse Distributed Representations",
   "main": "index.js",
   "scripts": {
